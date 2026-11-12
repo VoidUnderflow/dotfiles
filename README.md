@@ -1,2 +1,2 @@
 # dotfiles
-🌸: Am I cool now?
+/uj: Trying to make switching between Windows and MacOS less painful.
