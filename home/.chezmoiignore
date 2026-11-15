@@ -1,0 +1,7 @@
+{{- /* Unix configs belong to WSL, not Windows. */ -}}
+{{ if eq .chezmoi.os "windows" }}
+.zshrc
+.tmux.conf
+.config/nvim
+.config/starship.toml
+{{ end }}

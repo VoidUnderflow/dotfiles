@@ -1,0 +1,9 @@
+{{- $isMac := eq .chezmoi.os "darwin" -}}
+
+[data]
+    isMac = {{ $isMac }}
+
+{{ if eq .chezmoi.os "windows" -}}
+[cd]
+    command = "powershell"
+{{- end }}
