@@ -1,0 +1,32 @@
+{{ if ne .chezmoi.os "windows" -}}
+#!/bin/bash
+# Installs everything in .packages (which atm is built from .chezmoidata/packages.yml) via brew bundle.
+# Reruns when the rendered list changes.
+set -euo pipefail
+
+# Failsafe if current shell hasn't loaded brew yet. 
+if ! command -v brew >/dev/null; then
+  for brew_path in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+    if [ -x "$brew_path" ]; then
+      eval "$("$brew_path" shellenv)"
+      break
+    fi
+  done
+fi
+
+if ! command -v brew >/dev/null; then
+  echo "Homebrew not found. Install it first (see README)." >&2
+  exit 1
+fi
+
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ if eq .chezmoi.os "darwin" -}}
+{{ range .packages.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ end -}}

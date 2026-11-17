@@ -1,0 +1,5 @@
+# brews: CLI tools (Mac + Linux). casks: GUI apps (Mac only).
+packages:
+  brews:
+    - lazygit
+  casks: []
