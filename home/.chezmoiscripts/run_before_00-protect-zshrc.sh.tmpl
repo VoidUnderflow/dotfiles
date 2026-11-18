@@ -1,0 +1,13 @@
+{{ if ne .chezmoi.os "windows" -}}
+#!/bin/bash
+# Refuses to replace a .zshrc that chezmoi didn't write.
+set -euo pipefail
+
+zshrc="$HOME/.zshrc"
+if [ -f "$zshrc" ] && [ ! -f "$HOME/.zshrc.local" ] && ! grep -qF "Managed by chezmoi (VoidUnderflow/dotfiles)" "$zshrc"; then
+  cp "$zshrc" "$HOME/.zshrc.pre-chezmoi"
+  echo "Existing ~/.zshrc backed up to ~/.zshrc.pre-chezmoi." >&2
+  echo "Move machine-specific lines into ~/.zshrc.local (an empty file is fine), then re-run chezmoi apply." >&2
+  exit 1
+fi
+{{ end -}}
