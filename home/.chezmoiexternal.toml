@@ -1,0 +1,4 @@
+# Clone oh-my-zsh. Updates are left to its own updater, which is configured in .zshrc.
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh.git"

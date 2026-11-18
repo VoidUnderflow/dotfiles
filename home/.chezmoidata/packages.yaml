@@ -2,4 +2,6 @@
 packages:
   brews:
     - lazygit
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
   casks: []
