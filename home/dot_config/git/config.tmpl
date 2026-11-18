@@ -1,0 +1,9 @@
+# Managed by chezmoi (VoidUnderflow/dotfiles). Identity and machine-specific settings go in ~/.gitconfig.
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+{{- if and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{- end }}
