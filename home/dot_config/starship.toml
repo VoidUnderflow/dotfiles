@@ -1,0 +1,21 @@
+# Managed by chezmoi (VoidUnderflow/dotfiles).
+add_newline = false
+format = "$hostname$directory$git_branch$git_status$cmd_duration$jobs$character"
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+# Setting repo_root_style also activates repo_root_format.
+repo_root_style = "bold green"
+# No $before_root_path, so paths inside a repo start at its root, without "…/".
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold yellow"
+
+[character]
+success_symbol = "🌸[:](bold green)"
+error_symbol = "🥀[:](bold red)"
