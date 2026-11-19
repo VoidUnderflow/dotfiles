@@ -1,7 +1,10 @@
 # brews: CLI tools (Mac + Linux). casks: GUI apps (Mac only).
 packages:
   brews:
+    - fd
+    - fzf
     - lazygit
+    - ripgrep
     - starship
     - zsh-autosuggestions
     - zsh-syntax-highlighting
