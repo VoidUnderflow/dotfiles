@@ -15,7 +15,7 @@
     "profiles": {
         "defaults": {
             "colorScheme": "Tokyo Night",
-            "font": { "face": "JetBrainsMono NFM", "size": 12 }
+            "font": { "face": "JetBrainsMono NFM", "size": 10.5 }
         },
         "list": [
             {
