@@ -1,0 +1,17 @@
+{{ if eq .chezmoi.os "windows" -}}
+# Installs .packages.scoop via Scoop. Reruns when the rendered list changes.
+$ErrorActionPreference = 'Stop'
+
+if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
+    Write-Error 'Scoop not found. Install it first (see README).'
+}
+
+$installedBuckets = scoop bucket list | ForEach-Object Name
+{{ range .packages.scoopBuckets -}}
+if ($installedBuckets -notcontains {{ . | quote }}) { scoop bucket add {{ . | quote }} }
+{{ end -}}
+
+{{ range .packages.scoop -}}
+scoop install {{ . | quote }}
+{{ end -}}
+{{ end -}}

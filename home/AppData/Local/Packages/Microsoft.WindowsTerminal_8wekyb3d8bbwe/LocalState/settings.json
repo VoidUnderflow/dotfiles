@@ -1,0 +1,80 @@
+{
+    // Managed by chezmoi (VoidUnderflow/dotfiles).
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{7c3e9a51-2b84-4f6d-a0c9-5e1d8b2f4a67}",
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    // Stop WT from injecting auto-detected profiles into this file.
+    "disabledProfileSources": [
+        "Microsoft.WSL",
+        "Windows.Terminal.Wsl",
+        "Windows.Terminal.Azure",
+        "Windows.Terminal.PowershellCore",
+        "Windows.Terminal.VisualStudio"
+    ],
+    "profiles": {
+        "defaults": {
+            "colorScheme": "Tokyo Night",
+            "font": { "face": "JetBrainsMono NFM", "size": 12 }
+        },
+        "list": [
+            {
+                "guid": "{7c3e9a51-2b84-4f6d-a0c9-5e1d8b2f4a67}",
+                "name": "Ubuntu",
+                "commandline": "wsl.exe -d Ubuntu --cd ~ -- tmux new -A -s main"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "Command Prompt",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "hidden": true
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name": "Tokyo Night",
+            "background": "#1a1b26",
+            "foreground": "#c0caf5",
+            "cursorColor": "#c0caf5",
+            "selectionBackground": "#283457",
+            "black": "#15161e",
+            "red": "#f7768e",
+            "green": "#9ece6a",
+            "yellow": "#e0af68",
+            "blue": "#7aa2f7",
+            "purple": "#bb9af7",
+            "cyan": "#7dcfff",
+            "white": "#a9b1d6",
+            "brightBlack": "#414868",
+            "brightRed": "#f7768e",
+            "brightGreen": "#9ece6a",
+            "brightYellow": "#e0af68",
+            "brightBlue": "#7aa2f7",
+            "brightPurple": "#bb9af7",
+            "brightCyan": "#7dcfff",
+            "brightWhite": "#c0caf5"
+        }
+    ],
+    "actions": [],
+    // Free keys for tmux, zsh and Neovim. Paste with Ctrl+Shift+V.
+    "keybindings": [
+        { "id": null, "keys": "ctrl+v" },
+        { "id": null, "keys": "alt+shift+d" },
+        { "id": null, "keys": "alt+shift+minus" },
+        { "id": null, "keys": "alt+shift+plus" },
+        { "id": null, "keys": "alt+left" },
+        { "id": null, "keys": "alt+right" },
+        { "id": null, "keys": "alt+up" },
+        { "id": null, "keys": "alt+down" },
+        { "id": null, "keys": "alt+shift+left" },
+        { "id": null, "keys": "alt+shift+right" },
+        { "id": null, "keys": "alt+shift+up" },
+        { "id": null, "keys": "alt+shift+down" }
+    ]
+}

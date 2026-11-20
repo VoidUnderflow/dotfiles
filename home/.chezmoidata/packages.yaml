@@ -1,4 +1,4 @@
-# brews: CLI tools (Mac + Linux). casks: GUI apps (Mac only).
+# brews: CLI tools (Mac + Linux). casks: GUI apps (Mac only). scoop: Windows apps.
 packages:
   brews:
     - fd
@@ -10,3 +10,7 @@ packages:
     - zsh-autosuggestions
     - zsh-syntax-highlighting
   casks: []
+  scoopBuckets:
+    - nerd-fonts
+  scoop:
+    - JetBrainsMono-NF-Mono
