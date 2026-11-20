@@ -2,6 +2,7 @@
 {{ if eq .chezmoi.os "windows" }}
 .zshrc
 .oh-my-zsh
+.tmux
 .tmux.conf
 .config/nvim
 .config/starship.toml

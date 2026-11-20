@@ -6,6 +6,7 @@ packages:
     - lazygit
     - ripgrep
     - starship
+    - tmux
     - zsh-autosuggestions
     - zsh-syntax-highlighting
   casks: []
