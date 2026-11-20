@@ -6,6 +6,12 @@
 .tmux.conf
 .config/nvim
 .config/starship.toml
+.config/ghostty
+{{ end }}
+
+{{- /* No GUI terminal in WSL. */ -}}
+{{ if .isWsl }}
+.config/ghostty
 {{ end }}
 
 {{- /* Windows configs. */ -}}

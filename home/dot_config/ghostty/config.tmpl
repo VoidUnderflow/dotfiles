@@ -1,0 +1,28 @@
+# Managed by chezmoi (VoidUnderflow/dotfiles).
+theme = TokyoNight Night
+font-family = JetBrainsMono Nerd Font Mono
+font-size = {{ if .isMac }}13{{ else }}11{{ end }}
+
+# GUI apps don't get Homebrew's PATH, so tmux is called by full path.
+command = {{ if .isMac }}/opt/homebrew{{ else }}/home/linuxbrew/.linuxbrew{{ end }}/bin/tmux new -A -s main
+# tmux keeps the session, so closing a window loses nothing.
+confirm-close-surface = false
+
+# Start from no shortcuts so nothing reaches past tmux, then add back the few we use.
+keybind = clear
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+{{- if .isMac }}
+
+# Cmd sits where Alt is on a PC keyboard, so Cmd+<key> sends Alt+<key>.
+{{- range splitList "" "abcdefghijklmnopqrstuvwxyz0123456789" }}
+keybind = cmd+{{ . }}=esc:{{ . }}
+{{- end }}
+keybind = cmd+left=csi:1;3D
+keybind = cmd+right=csi:1;3C
+# Defined after the loop so Cmd+Q still quits.
+keybind = cmd+q=quit
+{{- end }}

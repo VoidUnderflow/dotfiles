@@ -1,0 +1,18 @@
+# Clone oh-my-zsh. Updates are left to its own updater, which is configured in .zshrc.
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh.git"
+
+[".tmux/plugins/vim-tmux-navigator"]
+    type = "git-repo"
+    url = "https://github.com/christoomey/vim-tmux-navigator.git"
+
+{{ if and (eq .chezmoi.os "linux") (not .isWsl) -}}
+# Fonts in ~/.local/share/fonts are picked up by fontconfig.
+[".local/share/fonts/JetBrainsMonoNerdFont"]
+    type = "archive"
+    url = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz"
+    include = ["*NerdFontMono-*.ttf"]
+    exact = true
+    refreshPeriod = "168h"
+{{ end -}}

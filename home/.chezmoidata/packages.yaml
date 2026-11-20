@@ -9,7 +9,9 @@ packages:
     - tmux
     - zsh-autosuggestions
     - zsh-syntax-highlighting
-  casks: []
+  casks:
+    - font-jetbrains-mono-nerd-font
+    - ghostty
   scoopBuckets:
     - nerd-fonts
   scoop:
