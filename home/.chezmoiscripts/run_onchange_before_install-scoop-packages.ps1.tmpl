@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "windows" -}}
+{{ if .isWindows -}}
 # Installs .packages.scoop via Scoop. Reruns when the rendered list changes.
 $ErrorActionPreference = 'Stop'
 

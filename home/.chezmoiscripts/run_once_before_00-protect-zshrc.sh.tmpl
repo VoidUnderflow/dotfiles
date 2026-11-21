@@ -1,4 +1,4 @@
-{{ if ne .chezmoi.os "windows" -}}
+{{ if not .isWindows -}}
 #!/bin/bash
 # Refuses to replace a .zshrc that chezmoi didn't write.
 set -euo pipefail

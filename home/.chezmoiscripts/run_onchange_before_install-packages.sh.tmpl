@@ -1,4 +1,4 @@
-{{ if ne .chezmoi.os "windows" -}}
+{{ if not .isWindows -}}
 #!/bin/bash
 # Installs everything in .packages (which atm is built from .chezmoidata/packages.yml) via brew bundle.
 # Reruns when the rendered list changes.

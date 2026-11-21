@@ -1,5 +1,5 @@
 {{- /* Unix configs belong to WSL, not Windows. */ -}}
-{{ if eq .chezmoi.os "windows" }}
+{{ if .isWindows }}
 .zshrc
 .oh-my-zsh
 .tmux
@@ -15,6 +15,6 @@
 {{ end }}
 
 {{- /* Windows configs. */ -}}
-{{ if ne .chezmoi.os "windows" }}
+{{ if not .isWindows }}
 AppData
 {{ end }}
