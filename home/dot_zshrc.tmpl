@@ -30,6 +30,13 @@ if command -v fzf >/dev/null; then
   export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
   source <(fzf --zsh)
 fi
+{{- if .isPersonal }}
+
+# Personal machines only: user-level installs (uv, pipx, ...) and language runtimes.
+export PATH="$HOME/.local/bin:$PATH"
+command -v mise >/dev/null && eval "$(mise activate zsh)"
+[[ -r ~/.cargo/env ]] && source ~/.cargo/env
+{{- end }}
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 

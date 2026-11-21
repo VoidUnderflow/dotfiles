@@ -1,0 +1,7 @@
+{{ if and .isPersonal (not .isWindows) -}}
+#!/bin/bash
+# Installs the global mise tools. Reruns when the config changes.
+# config.toml hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+set -euo pipefail
+mise install
+{{ end -}}

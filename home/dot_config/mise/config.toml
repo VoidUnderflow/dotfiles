@@ -1,0 +1,4 @@
+# Managed by chezmoi (VoidUnderflow/dotfiles). Global defaults; projects pin their own in mise.toml.
+[tools]
+node = "lts"
+pnpm = "latest"

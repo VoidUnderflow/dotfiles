@@ -1,0 +1,8 @@
+{{ if and .isPersonal (not .isWindows) -}}
+#!/bin/bash
+# Installs rustup and stable Rust. Updates are rustup's job afterwards.
+set -euo pipefail
+if [ ! -x "$HOME/.cargo/bin/rustup" ]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+fi
+{{ end -}}

@@ -7,6 +7,12 @@
 .config/nvim
 .config/starship.toml
 .config/ghostty
+.config/mise
+{{ end }}
+
+{{- /* Language runtimes only on personal machines. */ -}}
+{{ if not .isPersonal }}
+.config/mise
 {{ end }}
 
 {{- /* No GUI terminal in WSL. */ -}}

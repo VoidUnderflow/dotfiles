@@ -1,4 +1,7 @@
-# brews: CLI tools (Mac + Linux). casks: GUI apps (Mac only). scoop: Windows apps.
+# brews: CLI tools on every Mac and Linux machine.
+# personalBrews: CLI tools on personal Mac and Linux machines only.
+# casks: GUI apps, Mac only.
+# scoop: Windows apps.
 packages:
   brews:
     - fd
@@ -11,6 +14,8 @@ packages:
     - tree-sitter-cli
     - zsh-autosuggestions
     - zsh-syntax-highlighting
+  personalBrews:
+    - mise
   casks:
     - font-jetbrains-mono-nerd-font
     - ghostty

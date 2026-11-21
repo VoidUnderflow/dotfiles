@@ -1,11 +1,13 @@
 {{- $isWindows := eq .chezmoi.os "windows" -}}
 {{- $isMac := eq .chezmoi.os "darwin" -}}
 {{- $isWsl := and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+{{- $isPersonal := promptBoolOnce . "isPersonal" "Personal machine? (y/n)" false -}}
 
 [data]
     isWindows = {{ $isWindows }}
     isMac = {{ $isMac }}
     isWsl = {{ $isWsl }}
+    isPersonal = {{ $isPersonal }}
 
 {{ if $isWindows -}}
 [cd]
