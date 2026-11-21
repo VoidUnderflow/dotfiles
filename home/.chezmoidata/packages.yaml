@@ -4,9 +4,11 @@ packages:
     - fd
     - fzf
     - lazygit
+    - neovim
     - ripgrep
     - starship
     - tmux
+    - tree-sitter-cli
     - zsh-autosuggestions
     - zsh-syntax-highlighting
   casks:
