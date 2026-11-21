@@ -1,0 +1,3 @@
+" Managed by chezmoi (VoidUnderflow/dotfiles).
+" Vim for typing only: every conflicting shortcut (all the Ctrl combos) goes to IntelliJ.
+sethandler a:ide
