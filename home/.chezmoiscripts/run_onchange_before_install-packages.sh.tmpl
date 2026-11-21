@@ -31,7 +31,7 @@ brew {{ . | quote }}
 EOF
 {{ if eq .chezmoi.os "darwin" -}}
 
-# GUI apps may be blocked on managed Macs, so a failed cask only warns.
+# A blocked or failed GUI app only warns, so it doesn't stop the apply.
 brew bundle --file=/dev/stdin <<EOF || echo "Warning: some casks failed to install." >&2
 {{ range .packages.casks -}}
 cask {{ . | quote }}
